@@ -1,7 +1,7 @@
 resource "aws_instance" "function" {
   ami=  "ami-0055977a6e828a4f4"
   instance_type = "t3.micro"
-  vpc_security_group_ids = [aws_security_group.web.id]
+  vpc_security_group_ids = [aws_security_group.function.id]
 
   tags = merge (
     var.common-tags,
@@ -14,7 +14,7 @@ resource "aws_instance" "function" {
 }
 
 resource "aws_security_group" "function" {
-  name        = "web"
+  name        = "functions-sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
 
   ingress {

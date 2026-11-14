@@ -2,8 +2,8 @@
 .terraform/
 
 # Terraform state files (contain sensitive infrastructure data)
-*.tfstate
-*.tfstate.*
+#*.tfstate
+#*.tfstate.*
 
 # Crash logs
 crash.log
